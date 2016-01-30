@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using DG.Tweening;
+
 
 public class ChangeBackgroundColor : MonoBehaviour {
 
@@ -14,7 +16,9 @@ public class ChangeBackgroundColor : MonoBehaviour {
 	void OnEraTransition (GameModel.CurrentEra era)
 	{
 		if (era == GameModel.CurrentEra.Sixteenbit) {
-			GetComponent<Image> ().color = gameModel.sixteenBitEraBackgroundColor;
+//			GetComponent<Image> ().color = gameModel.sixteenBitEraBackgroundColor;
+
+			GetComponent<Image> ().DOColor (gameModel.sixteenBitEraBackgroundColor, 2);
 		}
 	}
 	
