@@ -40,7 +40,7 @@ public class GameModel : MonoBehaviour {
 
 	public void PerformAction(ActionType actionToPerform)
 	{
-		int capacityFactor = currentResources.contents[GameResources.Type.Capacity] / 4 + 1;
+		int capacityFactor = currentResources.contents[GameResources.Type.Capacity];
 		int upgradeBenefit = 100;
 		foreach (var upgrade in currentUpgrades.Values)
 		{
@@ -50,6 +50,7 @@ public class GameModel : MonoBehaviour {
 			}
 		}
 		capacityFactor = (capacityFactor * upgradeBenefit) / 100;
+		capacityFactor = capacityFactor / 4 + 1;
 		switch (actionToPerform)
 		{
 		case ActionType.Planning:
@@ -90,16 +91,6 @@ public class GameModel : MonoBehaviour {
 				localFriendList.Add (friendData.data [friendId]);
 			}
 
-			//Try to get rid of 0 chance friends
-			for (int i = 0; i < numberOfFriendsReturned; i++)
-			{
-				if (GetFriendChance(localFriendList[i]) < 5)
-				{
-					int friendId = Random.Range (0, countOfFriends);
-					localFriendList[i] = friendData.data[friendId];
-				}
-			}
-
 			if (OnFriendsFound != null)
 			{
 				OnFriendsFound (localFriendList);
@@ -116,13 +107,18 @@ public class GameModel : MonoBehaviour {
 		int max = friend.strength * 2;
 		int capacity = currentResources.contents[GameResources.Type.Capacity];
 		int chance = (capacity - min) * 100 / (max - min);
+
+		print(string.Format("Chance for {0}: {1} vs {2} chance: {3}%", friend.name, capacity, friend.strength, chance));
+
 		return Mathf.Clamp(chance, 0, 100);
 	}
 
 	public bool AttemptFriendTakeover(FriendData.Friend friend)
 	{
 		int chance = GetFriendChance(friend);
-		return Random.Range(0, 100) < chance;
+		int roll = Random.Range(0, 100);
+		print(string.Format("Trying to take {0}: roll {1} vs {2}", friend.name, roll, chance));
+		return roll < chance;
 	}
 
 	public void AddFriend(FriendData.Friend newFriend)
