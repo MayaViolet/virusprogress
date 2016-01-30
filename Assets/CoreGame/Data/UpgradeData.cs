@@ -11,7 +11,10 @@ public class UpgradeData : ScriptableObject {
 	{
 		public string name;
 		public GameResources cost;
-
+		public Sprite sprite;
+		public GameModel.ActionType actionToBenefit;
+		public int actionBenefitPercent = 0;
+		public int timeBenefitEffect = 0;
 	}
 
 	public Upgrade[] data;
