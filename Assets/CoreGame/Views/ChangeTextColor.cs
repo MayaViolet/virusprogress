@@ -15,7 +15,7 @@ public class ChangeTextColor : MonoBehaviour {
 	void OnEraTransition (GameModel.CurrentEra era)
 	{
 		if (era == GameModel.CurrentEra.Sixteenbit) {
-			GetComponent<Text> ().DOColor (gameModel.sixteenBitEraFontColor);
+			GetComponent<Text> ().DOColor (gameModel.sixteenBitEraFontColor, 2);
 		}
 	}
 	
