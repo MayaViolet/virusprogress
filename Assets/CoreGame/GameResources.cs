@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class GameResources {
 
 	public enum Type
@@ -10,7 +11,30 @@ public class GameResources {
 		Willpower
 	};
 
-	public Dictionary<Type, int> contents = new Dictionary<Type, int>();
+	[System.Serializable]
+	public class TypeMap
+	{
+		public Type key;
+		public int value;
+	}
+
+	public TypeMap[] mapStore;
+	private Dictionary<Type, int> _contents = null;
+	public Dictionary<Type, int> contents
+	{
+		get
+		{
+			if (_contents == null)
+			{
+				_contents = new Dictionary<Type, int>();
+				foreach (var map in mapStore)
+				{
+					_contents[map.key] = map.value;
+				}
+			}
+			return _contents;
+		}
+	}
 
 	public bool Exceeds(GameResources b)
 	{
