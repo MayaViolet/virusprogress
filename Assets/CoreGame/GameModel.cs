@@ -14,7 +14,8 @@ public class GameModel : MonoBehaviour {
 	{
 		Reasoning,
 		Planning,
-		Seeking
+		Seeking,
+		Purchase
 	};
 
 	public delegate void ActionCompleteCallback(ActionType completedAction);
@@ -33,6 +34,12 @@ public class GameModel : MonoBehaviour {
 			break;
 		case ActionType.Seeking:
 			SearchForFriends();
+			break;
+		case ActionType.Purchase:
+			if (OnShowPurchases != null)
+			{
+				OnShowPurchases(upgradeData);
+			}
 			break;
 		default:
 			break;
@@ -72,16 +79,23 @@ public class GameModel : MonoBehaviour {
 		
 	}
 
+	public delegate void ShowPurchasesCallback(UpgradeData upgrades);
+	public event ShowPurchasesCallback OnShowPurchases;
+
 	//Needs to return either the upgrade or a reason why it can't be 
 	public delegate void PurchaseUpgradeCallback(UpgradeData.Upgrade upgrade);
-
 	public event PurchaseUpgradeCallback OnPurchaseUpradeComplete;
 
 	public void PurchaseUpgrade(UpgradeData.Upgrade upgrade){
+		print("Purchasing upgrad: "+upgrade.name);
 		if (CanPurchase(upgrade))
 		{
+			print("Can afford");
 			SubtractResources(upgrade.cost);
-			OnPurchaseUpradeComplete (upgrade);
+			if (OnPurchaseUpradeComplete != null)
+			{
+				OnPurchaseUpradeComplete (upgrade);
+			}
 		}
 	}
 
