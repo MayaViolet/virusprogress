@@ -30,6 +30,11 @@ public class PurchaseScreen : MonoBehaviour {
 				text.color = Color.red;
 				continue;
 			}
+			if (gameModel.HasPurchased(upgrade))
+			{
+				text.color = Color.white;
+				continue;
+			}
 
 			var button = newEntry.GetComponentInChildren<Button>();
 			var upgradeToBuy = upgrade;
