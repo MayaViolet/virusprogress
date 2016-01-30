@@ -32,7 +32,7 @@ public class FriendAcquireView : MonoBehaviour {
 		}
 	}
 
-	void Hide()
+	public void Hide()
 	{
 		foreach (Transform child in friendsRoot.transform)
 		{
