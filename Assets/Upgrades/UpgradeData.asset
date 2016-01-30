@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a447e9bef224f8e8407d05dabcb7d1, type: 3}
+  m_Name: UpgradeData
+  m_EditorClassIdentifier: 
+  data:
+  - name: Re-Compile Kernel
+    cost:
+      mapStore:
+      - key: 2
+        value: 2
+    sprite: {fileID: 21300000, guid: f0c446cec58e44641900939ffb9b3d5e, type: 3}
+    actionToBenefit: 0
+    actionBenefitPercent: 10
+    timeBenefitEffect: 0
+  - name: Memory Upgrade
+    cost:
+      mapStore:
+      - key: 0
+        value: 1
+      - key: 1
+        value: 2
+    sprite: {fileID: 21300000, guid: d6f6c4227955a472ba0ff2af05c0ef4a, type: 3}
+    actionToBenefit: 1
+    actionBenefitPercent: 10
+    timeBenefitEffect: 0
+  - name: Optimise Code Base
+    cost:
+      mapStore:
+      - key: 2
+        value: 5
+    sprite: {fileID: 21300000, guid: f0c446cec58e44641900939ffb9b3d5e, type: 3}
+    actionToBenefit: 0
+    actionBenefitPercent: 20
+    timeBenefitEffect: 0
+  - name: Dual Core CPU
+    cost:
+      mapStore:
+      - key: 0
+        value: 6
+      - key: 1
+        value: 4
+    sprite: {fileID: 21300000, guid: d6f6c4227955a472ba0ff2af05c0ef4a, type: 3}
+    actionToBenefit: 1
+    actionBenefitPercent: 20
+    timeBenefitEffect: 0
+  - name: Version 2.0
+    cost:
+      mapStore:
+      - key: 1
+        value: 6
+    sprite: {fileID: 21300000, guid: f0c446cec58e44641900939ffb9b3d5e, type: 3}
+    actionToBenefit: 0
+    actionBenefitPercent: 60
+    timeBenefitEffect: 0
+  - name: Motherboard Upgrade
+    cost:
+      mapStore:
+      - key: 1
+        value: 8
+      - key: 0
+        value: 7
+    sprite: {fileID: 21300000, guid: d6f6c4227955a472ba0ff2af05c0ef4a, type: 3}
+    actionToBenefit: 1
+    actionBenefitPercent: 60
+    timeBenefitEffect: 0
+  - name: Increase Modeling Capacity
+    cost:
+      mapStore:
+      - key: 1
+        value: 13
+    sprite: {fileID: 21300000, guid: f0c446cec58e44641900939ffb9b3d5e, type: 3}
+    actionToBenefit: 0
+    actionBenefitPercent: 90
+    timeBenefitEffect: 0
+  - name: Update FIrmware
+    cost:
+      mapStore:
+      - key: 1
+        value: 8
+      - key: 0
+        value: 10
+    sprite: {fileID: 21300000, guid: d6f6c4227955a472ba0ff2af05c0ef4a, type: 3}
+    actionToBenefit: 1
+    actionBenefitPercent: 90
+    timeBenefitEffect: 0
+  - name: ADSL Internet Connection
+    cost:
+      mapStore:
+      - key: 0
+        value: 7
+      - key: 1
+        value: 7
+      - key: 2
+        value: 7
+    sprite: {fileID: 21300000, guid: d6f6c4227955a472ba0ff2af05c0ef4a, type: 3}
+    actionToBenefit: 1
+    actionBenefitPercent: 150
+    timeBenefitEffect: 0
+  - name: Expanded Cache
+    cost:
+      mapStore:
+      - key: 0
+        value: 9
+      - key: 1
+        value: 8
+      - key: 2
+        value: 7
+    sprite: {fileID: 21300000, guid: f0c446cec58e44641900939ffb9b3d5e, type: 3}
+    actionToBenefit: 0
+    actionBenefitPercent: 150
+    timeBenefitEffect: 0
+  - name: SSD Upgrade
+    cost:
+      mapStore:
+      - key: 0
+        value: 28
+    sprite: {fileID: 21300000, guid: d6f6c4227955a472ba0ff2af05c0ef4a, type: 3}
+    actionToBenefit: 1
+    actionBenefitPercent: 250
+    timeBenefitEffect: 0
+  - name: Quad core processor
+    cost:
+      mapStore:
+      - key: 0
+        value: 10
+      - key: 0
+        value: 10
+      - key: 0
+        value: 10
+    sprite: {fileID: 21300000, guid: d6f6c4227955a472ba0ff2af05c0ef4a, type: 3}
+    actionToBenefit: 1
+    actionBenefitPercent: 400
+    timeBenefitEffect: 0
+  - name: Distributive Processing
+    cost:
+      mapStore:
+      - key: 0
+        value: 16
+      - key: 0
+        value: 16
+    sprite: {fileID: 21300000, guid: f0c446cec58e44641900939ffb9b3d5e, type: 3}
+    actionToBenefit: 0
+    actionBenefitPercent: 300
+    timeBenefitEffect: 0
+  - name: Fiber Optic Internet
+    cost:
+      mapStore:
+      - key: 0
+        value: 12
+      - key: 1
+        value: 13
+      - key: 2
+        value: 11
+    sprite: {fileID: 21300000, guid: d6f6c4227955a472ba0ff2af05c0ef4a, type: 3}
+    actionToBenefit: 0
+    actionBenefitPercent: 400
+    timeBenefitEffect: 0

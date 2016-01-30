@@ -17,7 +17,6 @@ public class PurchaseScreen : MonoBehaviour {
 	void Start()
 	{
 		gameModel.OnShowPurchases += OnShowPurchases;
-		gameModel.OnPurchaseUpradeComplete += OnUpgradePurchase;
 	}
 
 	void OnShowPurchases(UpgradeData upgrades)
@@ -25,17 +24,18 @@ public class PurchaseScreen : MonoBehaviour {
 		uiRoot.SetActive(true);
 		foreach (var upgrade in upgrades.data)
 		{
+			if (gameModel.HasPurchased(upgrade))
+			{
+				continue;
+			}
+
 			var newEntry = Instantiate<GameObject>(skillButtonPrefab);
 			newEntry.transform.SetParent(skillList.transform);
 			var text = newEntry.GetComponentInChildren<Text>();
 			text.text = upgrade.name;
 			var image = newEntry.GetComponentInChildren<Image>();
+			image.sprite = upgrade.sprite;
 
-			if (gameModel.HasPurchased(upgrade))
-			{
-				text.color = Color.white;
-				continue;
-			}
 			if (!gameModel.CanPurchase(upgrade))
 			{
 				text.color = Color.red;
@@ -48,10 +48,6 @@ public class PurchaseScreen : MonoBehaviour {
 				ShowResult(upgradeToBuy);
 			});
 		}
-	}
-
-	void OnUpgradePurchase(UpgradeData.Upgrade upgrade)
-	{
 	}
 
 	public void Hide()
@@ -68,6 +64,16 @@ public class PurchaseScreen : MonoBehaviour {
 	{
 		popupRoot.SetActive(true);
 		popupTitle.text = upgrade.name;
+		popupImage.sprite = upgrade.sprite;
+		if (upgrade.timeBenefitEffect == 0)
+		{
+			popupExtraText.text = string.Format("+{0}% {1}", upgrade.actionBenefitPercent, upgrade.actionToBenefit.ToString());
+		}
+		else
+		{
+			popupExtraText.text = string.Format("+{0}% Action Speed", upgrade.actionBenefitPercent, upgrade.actionToBenefit.ToString());
+		}
+
 		gameModel.PurchaseUpgrade(upgrade);
 	}
 }

@@ -41,6 +41,15 @@ public class GameModel : MonoBehaviour {
 	public void PerformAction(ActionType actionToPerform)
 	{
 		int capacityFactor = currentResources.contents[GameResources.Type.Capacity] / 4 + 1;
+		int upgradeBenefit = 100;
+		foreach (var upgrade in currentUpgrades.Values)
+		{
+			if (upgrade.actionToBenefit == actionToPerform)
+			{
+				upgradeBenefit += upgrade.actionBenefitPercent;
+			}
+		}
+		capacityFactor = (capacityFactor * upgradeBenefit) / 100;
 		switch (actionToPerform)
 		{
 		case ActionType.Planning:
@@ -146,7 +155,10 @@ public class GameModel : MonoBehaviour {
 			upgradeCounter++;
 			SubtractResources(upgrade.cost);
 			currentUpgrades[upgrade.name] = upgrade;
-			OnPurchaseUpradeComplete (upgrade);
+			if (OnPurchaseUpradeComplete != null)
+			{
+				OnPurchaseUpradeComplete (upgrade);
+			}
 
 			if ((upgradeCounter % upgradesRequiredToChangeEra)==0) {
 				EraTransition ();
