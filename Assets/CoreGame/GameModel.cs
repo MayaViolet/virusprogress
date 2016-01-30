@@ -8,6 +8,9 @@ public class GameModel : MonoBehaviour {
 	public FriendData friendData;
 	public UpgradeData upgradeData;
 
+	public float backgroundEraTransitionTime = 0.2f;
+	public float gameStartButtonTransitionTime = 0.2f;
+
 	public Color sixteenBitEraFontColor = Color.blue;
 	public Color sixteenBitEraBackgroundColor = Color.blue;
 
