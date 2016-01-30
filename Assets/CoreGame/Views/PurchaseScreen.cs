@@ -13,6 +13,7 @@ public class PurchaseScreen : MonoBehaviour {
 	{
 		gameModel.OnShowPurchases += OnShowPurchases;
 		gameModel.OnPurchaseUpradeComplete += OnUpgradePurchase;
+
 	}
 
 	void OnShowPurchases(UpgradeData upgrades)

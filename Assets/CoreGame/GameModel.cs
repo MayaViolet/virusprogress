@@ -8,6 +8,9 @@ public class GameModel : MonoBehaviour {
 	public FriendData friendData;
 	public UpgradeData upgradeData;
 
+	public Color sixteenBitEraFontColor = Color.blue;
+	public Color sixteenBitEraBackgroundColor = Color.blue;
+
 	private int upgradeCounter;
 	public const int upgradesRequiredToChangeEra = 5;
 
@@ -101,7 +104,7 @@ public class GameModel : MonoBehaviour {
 			SubtractResources(upgrade.cost);
 			OnPurchaseUpradeComplete (upgrade);
 
-			if ((upgradeCounter % upgradesRequiredToChangeEra) == 0) {
+			if ((upgradeCounter % upgradesRequiredToChangeEra)==0) {
 				EraTransition ();
 			}
 		}
