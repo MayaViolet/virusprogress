@@ -9,11 +9,15 @@ public class PurchaseScreen : MonoBehaviour {
 	public GameObject skillList;
 	public GameObject skillButtonPrefab;
 
+	public GameObject popupRoot;
+	public Text popupTitle;
+	public Image popupImage;
+	public Text popupExtraText;
+
 	void Start()
 	{
 		gameModel.OnShowPurchases += OnShowPurchases;
 		gameModel.OnPurchaseUpradeComplete += OnUpgradePurchase;
-
 	}
 
 	void OnShowPurchases(UpgradeData upgrades)
@@ -26,28 +30,28 @@ public class PurchaseScreen : MonoBehaviour {
 			var text = newEntry.GetComponentInChildren<Text>();
 			text.text = upgrade.name;
 			var image = newEntry.GetComponentInChildren<Image>();
-			if (!gameModel.CanPurchase(upgrade))
-			{
-				text.color = Color.red;
-				continue;
-			}
+
 			if (gameModel.HasPurchased(upgrade))
 			{
 				text.color = Color.white;
+				continue;
+			}
+			if (!gameModel.CanPurchase(upgrade))
+			{
+				text.color = Color.red;
 				continue;
 			}
 
 			var button = newEntry.GetComponentInChildren<Button>();
 			var upgradeToBuy = upgrade;
 			button.onClick.AddListener(() => {
-				gameModel.PurchaseUpgrade(upgradeToBuy);
+				ShowResult(upgradeToBuy);
 			});
 		}
 	}
 
 	void OnUpgradePurchase(UpgradeData.Upgrade upgrade)
 	{
-		Hide();
 	}
 
 	public void Hide()
@@ -57,5 +61,13 @@ public class PurchaseScreen : MonoBehaviour {
 			Destroy(child.gameObject);
 		}
 		uiRoot.SetActive(false);
+		popupRoot.SetActive(false);
+	}
+
+	void ShowResult(UpgradeData.Upgrade upgrade)
+	{
+		popupRoot.SetActive(true);
+		popupTitle.text = upgrade.name;
+		gameModel.PurchaseUpgrade(upgrade);
 	}
 }
