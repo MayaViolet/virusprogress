@@ -84,11 +84,22 @@ public class GameModel : MonoBehaviour {
 	public void SearchForFriends(){
 		List<FriendData.Friend> localFriendList = new List<FriendData.Friend>();
 		if (friendData != null && friendData.data.Length > 0) {
-			int countOfFriends = friendData.data.Length;
+
+			List<FriendData.Friend> viableFriends = new List<FriendData.Friend>();
+			foreach (var friend in friendData.data)
+			{
+				int chance = GetFriendChance(friend);
+				if (chance > 5)
+				{
+					viableFriends.Add(friend);
+				}
+			}
+
+			int countOfFriends = viableFriends.Count;
 
 			for (int index = 0; index < numberOfFriendsReturned; index++) {
 				int friendId = Random.Range (0, countOfFriends);
-				localFriendList.Add (friendData.data [friendId]);
+				localFriendList.Add (viableFriends[friendId]);
 			}
 
 			if (OnFriendsFound != null)
