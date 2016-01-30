@@ -27,7 +27,7 @@ public class PurchaseScreen : MonoBehaviour {
 			var image = newEntry.GetComponentInChildren<Image>();
 			if (!gameModel.CanPurchase(upgrade))
 			{
-				image.color = Color.red;
+				text.color = Color.red;
 				continue;
 			}
 
@@ -44,7 +44,7 @@ public class PurchaseScreen : MonoBehaviour {
 		Hide();
 	}
 
-	void Hide()
+	public void Hide()
 	{
 		foreach (Transform child in skillList.transform)
 		{
