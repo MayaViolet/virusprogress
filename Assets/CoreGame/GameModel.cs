@@ -66,7 +66,11 @@ public class GameModel : MonoBehaviour {
 			Debug.LogError("Error: List of Friends is not populated");
 		}
 	}
+
+	public void AddFriend(FriendData.Friend newFriend)
+	{
 		
+	}
 
 	//Needs to return either the upgrade or a reason why it can't be 
 	public delegate void PurchaseUpgradeCallback(UpgradeData.Upgrade upgrade);

@@ -23,7 +23,21 @@ public class FriendAcquireView : MonoBehaviour {
 			newElement.transform.SetParent(friendsRoot.transform);
 			var text = newElement.GetComponentInChildren<Text>();
 			text.text = friend.name;
+			Button friendButton = newElement.GetComponentInChildren<Button>();
+
+			friendButton.onClick.AddListener(() => {
+				gameModel.AddFriend(friend);
+				Hide();
+			});
 		}
 	}
 
+	void Hide()
+	{
+		foreach (Transform child in friendsRoot.transform)
+		{
+			Destroy(child.gameObject);
+		}
+		uiRoot.SetActive(false);
+	}
 }
