@@ -10,31 +10,27 @@ public class ActionsView : MonoBehaviour {
 
 	void Start()
 	{
-		MakeButtons();
+		
 	}
 
-	void MakeButtons()
+	public void DoReason()
 	{
-		foreach (Transform child in transform)
-		{
-			Destroy(child);
-		}
+		gameModel.PerformAction(GameModel.ActionType.Reasoning);
+	}
 
-		string[] actions = System.Enum.GetNames(typeof(GameModel.ActionType));
-		foreach (string action in actions)
-		{
-			Button actionButton = Instantiate<Button>(buttonPrefab);
-			actionButton.transform.SetParent(transform);
-			Text buttonLabel = actionButton.GetComponentInChildren<Text>();
-			buttonLabel.text = action;
+	public void DoPlan()
+	{
+		gameModel.PerformAction(GameModel.ActionType.Planning);
+	}
 
-			GameModel.ActionType toDo = (GameModel.ActionType)System.Enum.Parse(typeof(GameModel.ActionType), action);
-			print("The action is "+action+" it became "+toDo);
+	public void DoSeek()
+	{
+		gameModel.PerformAction(GameModel.ActionType.Seeking);
+	}
 
-			actionButton.onClick.AddListener(() => {
-				gameModel.PerformAction(toDo);
-			});
-		}
+	public void DoPurchase()
+	{
+		gameModel.PerformAction(GameModel.ActionType.Purchase);
 	}
 
 }
