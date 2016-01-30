@@ -44,7 +44,7 @@ public class GameModel : MonoBehaviour {
 		}
 	}
 
-	public delegate List<FriendData.Friend> FriendsFoundCallback(List<FriendData.Friend> foundFriends);
+	public delegate void FriendsFoundCallback(List<FriendData.Friend> foundFriends);
 
 	public event FriendsFoundCallback OnFriendsFound;
 

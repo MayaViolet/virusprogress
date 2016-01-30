@@ -24,7 +24,7 @@ public class ActionsView : MonoBehaviour {
 		foreach (string action in actions)
 		{
 			Button actionButton = Instantiate<Button>(buttonPrefab);
-			actionButton.transform.parent = transform;
+			actionButton.transform.SetParent(transform);
 			Text buttonLabel = actionButton.GetComponentInChildren<Text>();
 			buttonLabel.text = action;
 

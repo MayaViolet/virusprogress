@@ -27,9 +27,12 @@ public class GameResources {
 			if (_contents == null)
 			{
 				_contents = new Dictionary<Type, int>();
-				foreach (var map in mapStore)
+				if (mapStore != null)
 				{
-					_contents[map.key] = map.value;
+					foreach (var map in mapStore)
+					{
+						_contents[map.key] = map.value;
+					}
 				}
 			}
 			return _contents;

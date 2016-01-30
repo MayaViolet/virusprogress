@@ -12,7 +12,7 @@ public class StoryView : MonoBehaviour {
 	{
 		Text newLine = Instantiate(textPrefab) as Text;
 		newLine.text = text;
-		newLine.rectTransform.parent = content;
+		newLine.rectTransform.SetParent(content);
 		newLine.rectTransform.SetSiblingIndex(0);
 		var size = content.sizeDelta;
 		size.y += lineHeight;

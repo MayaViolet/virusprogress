@@ -23,7 +23,7 @@ public class StatsView : MonoBehaviour {
 			{
 				var entry = Instantiate<GameObject>(statEntryPrefab);
 				statEntries[key.ToString()] = entry;
-				entry.transform.parent = transform;
+				entry.transform.SetParent(transform);
 				var text = entry.GetComponentInChildren<Text>();
 				text.text = key.ToString();
 			}
