@@ -27,6 +27,9 @@ public class FriendAcquireView : MonoBehaviour {
 			var newElement = Instantiate<GameObject>(friendSelectorPrefab);
 			newElement.transform.SetParent(friendsRoot.transform);
 
+			Image friendSprite = newElement.GetComponentInChildren<Image>();
+			friendSprite.sprite = friend.friendImage;
+
 			int chance = gameModel.GetFriendChance(friend);
 			var texts = newElement.GetComponentsInChildren<Text>();
 			foreach (var text in texts)
@@ -42,8 +45,9 @@ public class FriendAcquireView : MonoBehaviour {
 			}
 			Button friendButton = newElement.GetComponentInChildren<Button>();
 
+			FriendData.Friend thisFriend = friend;
 			friendButton.onClick.AddListener(() => {
-				AttempAcquisition(friend);
+				AttempAcquisition(thisFriend);
 			});
 		}
 	}
