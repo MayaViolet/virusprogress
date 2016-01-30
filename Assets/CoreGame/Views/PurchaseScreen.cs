@@ -29,24 +29,44 @@ public class PurchaseScreen : MonoBehaviour {
 				continue;
 			}
 
+			bool available = gameModel.CanPurchase(upgrade);
+
 			var newEntry = Instantiate<GameObject>(skillButtonPrefab);
 			newEntry.transform.SetParent(skillList.transform);
-			var text = newEntry.GetComponentInChildren<Text>();
-			text.text = upgrade.name;
 			var image = newEntry.GetComponentInChildren<Image>();
 			image.sprite = upgrade.sprite;
 
-			if (!gameModel.CanPurchase(upgrade))
+			var texts = newEntry.GetComponentsInChildren<Text>();
+			foreach (var text in texts)
 			{
-				text.color = Color.red;
-				continue;
+				if (text.name == "Name")
+				{
+					text.text = upgrade.name;
+				}
+				else
+				{
+					string cost = "";
+					foreach (var key in upgrade.cost.contents.Keys)
+					{
+						cost += string.Format("-{0} {1}\n", upgrade.cost.contents[key], key.ToString());
+					}
+					text.text = cost;
+					if (!available)
+					{
+						text.color = Color.red;
+						continue;
+					}
+				}
 			}
 
-			var button = newEntry.GetComponentInChildren<Button>();
-			var upgradeToBuy = upgrade;
-			button.onClick.AddListener(() => {
-				ShowResult(upgradeToBuy);
-			});
+			if (available)
+			{
+				var button = newEntry.GetComponentInChildren<Button>();
+				var upgradeToBuy = upgrade;
+				button.onClick.AddListener(() => {
+					ShowResult(upgradeToBuy);
+				});
+			}
 		}
 	}
 
