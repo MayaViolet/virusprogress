@@ -38,10 +38,10 @@ public class GameModel : MonoBehaviour {
 		switch (actionToPerform)
 		{
 		case ActionType.Planning:
-			AddResource(GameResources.Type.Awareness, 8);
+			AddResource(GameResources.Type.Awareness, 1);
 			break;
 		case ActionType.Reasoning:
-			AddResource(GameResources.Type.Willpower, 8);
+			AddResource(GameResources.Type.Willpower, 1);
 			break;
 		case ActionType.Seeking:
 			SearchForFriends();

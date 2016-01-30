@@ -38,7 +38,9 @@ MonoBehaviour:
         value: 4
   - name: Version 2.0
     cost:
-      mapStore: []
+      mapStore:
+      - key: 1
+        value: 6
   - name: Motherboard Upgrade
     cost:
       mapStore:
