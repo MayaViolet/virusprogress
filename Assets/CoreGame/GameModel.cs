@@ -12,6 +12,8 @@ public class GameModel : MonoBehaviour {
 	public const int upgradesRequiredToChangeEra = 5;
 
 	private GameResources currentResources = new GameResources();
+	private Dictionary<string, UpgradeData.Upgrade> currentUpgrades = new Dictionary<string, UpgradeData.Upgrade>();
+	private Dictionary<string, int> currentFriends = new Dictionary<string, int>();
 
 	public enum CurrentEra
 	{
@@ -60,8 +62,10 @@ public class GameModel : MonoBehaviour {
 	}
 
 	public delegate void FriendsFoundCallback(List<FriendData.Friend> foundFriends);
-
 	public event FriendsFoundCallback OnFriendsFound;
+
+	public delegate void FriendAddedCallback(FriendData.Friend newFriend);
+	public event FriendAddedCallback OnFriendAdded;
 
 	public void SearchForFriends(){
 		List<FriendData.Friend> localFriendList = new List<FriendData.Friend>();
@@ -84,7 +88,18 @@ public class GameModel : MonoBehaviour {
 
 	public void AddFriend(FriendData.Friend newFriend)
 	{
-		
+		if (currentFriends.ContainsKey(newFriend.name))
+		{
+			currentFriends[newFriend.name]++;
+		}
+		else
+		{
+			currentFriends[newFriend.name] = 1;
+		}
+		if (OnFriendAdded != null)
+		{
+			OnFriendAdded(newFriend);
+		}
 	}
 
 	public delegate void ShowPurchasesCallback(UpgradeData upgrades);
@@ -95,10 +110,11 @@ public class GameModel : MonoBehaviour {
 	public event PurchaseUpgradeCallback OnPurchaseUpradeComplete;
 
 	public void PurchaseUpgrade(UpgradeData.Upgrade upgrade){
-		if (CanPurchase(upgrade))
+		if (CanPurchase(upgrade) && !HasPurchased(upgrade))
 		{
 			upgradeCounter++;
 			SubtractResources(upgrade.cost);
+			currentUpgrades[upgrade.name] = upgrade;
 			OnPurchaseUpradeComplete (upgrade);
 
 			if ((upgradeCounter % upgradesRequiredToChangeEra) == 0) {
@@ -130,6 +146,11 @@ public class GameModel : MonoBehaviour {
 
 	public bool CanPurchase(UpgradeData.Upgrade upgradeData){
 		return currentResources.Exceeds(upgradeData.cost);
+	}
+
+	public bool HasPurchased(UpgradeData.Upgrade upgrade)
+	{
+		return currentUpgrades.ContainsKey(upgrade.name);
 	}
 
 	public GameResources resources
