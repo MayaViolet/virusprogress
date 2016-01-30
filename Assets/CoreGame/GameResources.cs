@@ -31,6 +31,18 @@ public class GameResources {
 		return true;
 	}
 
+	public void Add(Type key, int quantity)
+	{
+		if (contents.ContainsKey(key))
+		{
+			contents[key] += quantity;
+		}
+		else
+		{
+			contents[key] = quantity;
+		}
+	}
+
 	public void Add(GameResources toAdd)
 	{
 		foreach (var key in toAdd.contents.Keys)
@@ -43,6 +55,22 @@ public class GameResources {
 			{
 				contents[key] = toAdd.contents[key];
 			}
+		}
+	}
+
+	public void Subtract(Type key, int quantity, bool allowNegative = true)
+	{
+		if (contents.ContainsKey(key))
+		{
+			contents[key] -= quantity;
+		}
+		else
+		{
+			contents[key] = quantity;
+		}
+		if (!allowNegative && contents[key] < 0)
+		{
+			contents[key] = 0;
 		}
 	}
 

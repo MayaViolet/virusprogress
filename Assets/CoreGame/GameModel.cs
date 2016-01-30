@@ -2,47 +2,65 @@
 using System.Collections.Generic;
 
 public class GameModel : MonoBehaviour {
+	
+	private const int numberOfFriendsReturned = 2;
 
-	public FriendData friendList;
-	private int numberOfFriendsReturned = 2;
+	public FriendData friendData;
+	public UpgradeData upgradeData;
 
-
-	private GameResources currentResources;
-
+	private GameResources currentResources = new GameResources();
 
 	public enum ActionType
 	{
-		Planning
+		Reasoning,
+		Planning,
+		Seeking
 	};
 
 	public delegate void ActionCompleteCallback(ActionType completedAction);
 
-	public static event ActionCompleteCallback OnActionComplete;
+	public event ActionCompleteCallback OnActionComplete;
 
 	public void PerformAction(ActionType actionToPerform)
 	{
+		switch (actionToPerform)
+		{
+		case ActionType.Planning:
+			AddResource(GameResources.Type.Awareness, 8);
+			break;
+		case ActionType.Reasoning:
+			AddResource(GameResources.Type.Willpower, 8);
+			break;
+		case ActionType.Seeking:
+			SearchForFriends();
+			break;
+		default:
+			break;
+		}
 		//Do stuff
 		if (OnActionComplete != null)
 		{
 			OnActionComplete(actionToPerform);
 		}
 	}
-		
 
 	public delegate List<FriendData.Friend> FriendsFoundCallback(List<FriendData.Friend> foundFriends);
 
-	public static event FriendsFoundCallback OnFriendsFound;
+	public event FriendsFoundCallback OnFriendsFound;
 
 	public void SearchForFriends(){
 		List<FriendData.Friend> localFriendList = new List<FriendData.Friend>();
-		if (!friendList == null) {
+		if (friendData != null && friendData.data.Length > 0) {
 			for (int index = 0; index < numberOfFriendsReturned; index++) {
-				int countOfFriends = friendList.data.Length;
-				int friendId = Random.Range (1, countOfFriends);
-				localFriendList.Add (friendList.data [friendId]);
+				int countOfFriends = friendData.data.Length;
+				int friendId = Random.Range (0, countOfFriends);
+				localFriendList.Add (friendData.data [friendId]);
 			}
 
-			OnFriendsFound (localFriendList);
+			if (OnFriendsFound != null)
+			{
+				OnFriendsFound (localFriendList);
+			}
 		} else {
 			//Developer screwed up exit
 			Debug.LogError("Error: List of Friends is not populated");
@@ -53,7 +71,7 @@ public class GameModel : MonoBehaviour {
 	//Needs to return either the upgrade or a reason why it can't be 
 	public delegate void PurchaseUpgradeCallback(UpgradeData.Upgrade upgrade);
 
-	public static event PurchaseUpgradeCallback OnPurchaseUpradeComplete;
+	public event PurchaseUpgradeCallback OnPurchaseUpradeComplete;
 
 	public void PurchaseUpgrade(UpgradeData.Upgrade upgrade){
 		if (CanPurchase(upgrade))
@@ -66,7 +84,7 @@ public class GameModel : MonoBehaviour {
 	//can purchase (onresource change)
 	public delegate void ResourceChangeCallBack(GameResources newValues);
 
-	public static event ResourceChangeCallBack OnResourceChange;
+	public event ResourceChangeCallBack OnResourceChange;
 
 
 	public bool CanPurchase(UpgradeData.Upgrade upgradeData){
@@ -81,6 +99,18 @@ public class GameModel : MonoBehaviour {
 		}
 	}
 
+	public void AddResource(GameResources.Type key, int amount)
+	{
+		currentResources.Add(key, amount);
+		OnResourceChange(resources);
+	}
+
+	public void TakeResource(GameResources.Type key, int amount)
+	{
+		currentResources.Subtract(key, amount);
+		OnResourceChange(resources);
+	}
+
 	public void AddResources(GameResources toAdd)
 	{
 		currentResources.Add(toAdd);
@@ -91,5 +121,10 @@ public class GameModel : MonoBehaviour {
 	{
 		currentResources.Subtract(toTake, false);
 		OnResourceChange(resources);
+	}
+
+	void Start()
+	{
+		AddResource(GameResources.Type.Capacity, 8);
 	}
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class ActionsView : MonoBehaviour {
 
+	public GameModel gameModel;
 	public Button buttonPrefab;
 
 	void Start()
@@ -26,6 +27,13 @@ public class ActionsView : MonoBehaviour {
 			actionButton.transform.parent = transform;
 			Text buttonLabel = actionButton.GetComponentInChildren<Text>();
 			buttonLabel.text = action;
+
+			GameModel.ActionType toDo = (GameModel.ActionType)System.Enum.Parse(typeof(GameModel.ActionType), action);
+			print("The action is "+action+" it became "+toDo);
+
+			actionButton.onClick.AddListener(() => {
+				gameModel.PerformAction(toDo);
+			});
 		}
 	}
 

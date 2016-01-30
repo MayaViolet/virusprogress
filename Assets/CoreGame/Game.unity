@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f5d43b8af924be6b71e639a6a50c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  friendData: {fileID: 11400000, guid: bf226d96b66c74594bf4e3d0d8bcaefa, type: 2}
+  upgradeData: {fileID: 11400000, guid: 387f1db6261cc45fa92c4502ee64145f, type: 2}
 --- !u!4 &13172170
 Transform:
   m_ObjectHideFlags: 0
@@ -951,7 +953,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1031,6 +1033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f887b2c34b94098a730cd9bba2b273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameModel: {fileID: 13172169}
+  statEntryPrefab: {fileID: 152976, guid: 6524dc79c2f974391ba34371ff7fe6ff, type: 2}
 --- !u!1 &2029210288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,4 +1192,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b9f712f8b6b46bfa9c73115bc0fd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameModel: {fileID: 13172169}
   buttonPrefab: {fileID: 11446012, guid: 9add4f5f4822a466b9ab1e33108ec32f, type: 2}
