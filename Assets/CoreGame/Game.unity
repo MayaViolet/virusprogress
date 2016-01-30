@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friendData: {fileID: 11400000, guid: bf226d96b66c74594bf4e3d0d8bcaefa, type: 2}
   upgradeData: {fileID: 11400000, guid: 387f1db6261cc45fa92c4502ee64145f, type: 2}
+  backgroundEraTransitionTime: 0.2
+  gameStartButtonTransitionTime: 0.2
   sixteenBitEraFontColor: {r: 0.39705884, g: 0.750507, b: 1, a: 1}
   sixteenBitEraBackgroundColor: {r: 0.15516868, g: 0.29154488, b: 0.5147059, a: 1}
 --- !u!4 &13172170
