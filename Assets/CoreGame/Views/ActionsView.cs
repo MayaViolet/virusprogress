@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class ActionsView : MonoBehaviour {
 
@@ -34,6 +35,8 @@ public class ActionsView : MonoBehaviour {
 			actionButton.onClick.AddListener(() => {
 				gameModel.PerformAction(toDo);
 			});
+
+			//tween scale fr
 		}
 	}
 

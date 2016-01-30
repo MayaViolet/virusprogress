@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ChangeTextColor : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class ChangeTextColor : MonoBehaviour {
 	void OnEraTransition (GameModel.CurrentEra era)
 	{
 		if (era == GameModel.CurrentEra.Sixteenbit) {
-			GetComponent<Text> ().color = gameModel.sixteenBitEraFontColor;
+			GetComponent<Text> ().DOColor (gameModel.sixteenBitEraFontColor);
 		}
 	}
 	
