@@ -36,7 +36,9 @@ public class ActionsView : MonoBehaviour {
 				gameModel.PerformAction(toDo);
 			});
 
-			//tween scale fr
+			Vector3 originalScale = actionButton.transform.localScale;
+			actionButton.transform.localScale = new Vector3 (0, 0, 0);
+			actionButton.transform.DOScale (originalScale, 2);
 		}
 	}
 

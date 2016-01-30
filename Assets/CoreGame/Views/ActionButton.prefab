@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11428262}
   - 114: {fileID: 11446012}
   - 114: {fileID: 11421288}
+  - 114: {fileID: 11424136}
   m_Layer: 5
   m_Name: ActionButton
   m_TagString: Untagged
@@ -29,6 +30,7 @@ GameObject:
   - 224: {fileID: 22471812}
   - 222: {fileID: 22297716}
   - 114: {fileID: 11480618}
+  - 114: {fileID: 11496136}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -54,6 +56,18 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+--- !u!114 &11424136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2f03c56f61c41c4a8a77087fc91916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameModel: {fileID: 0}
 --- !u!114 &11428262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,10 +157,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: fe2ba00d4a08a4b1bb4d44410cf0df0d, type: 3}
-    m_FontSize: 14
+    m_FontSize: 8
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 8
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -155,6 +169,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Button
+--- !u!114 &11496136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b4e389864240aaa73cdfd7ad048d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameModel: {fileID: 0}
 --- !u!222 &22292746
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -225,6 +251,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Color.b
       value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FontData.m_FontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FontData.m_MinSize
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

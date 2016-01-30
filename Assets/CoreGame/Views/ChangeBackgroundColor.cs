@@ -10,6 +10,10 @@ public class ChangeBackgroundColor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (gameModel == null)
+		{
+			gameModel = GameObject.Find("GameModel").GetComponent<GameModel>();
+		}
 		gameModel.OnEraTransition += OnEraTransition;
 	}
 
