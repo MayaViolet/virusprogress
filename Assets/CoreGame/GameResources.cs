@@ -11,14 +11,9 @@ public class GameResources {
 		Willpower
 	};
 
-	[System.Serializable]
-	public class TypeMap
-	{
-		public Type key;
-		public int value;
-	}
-
-	public TypeMap[] mapStore;
+	public int capacity;
+	public int awareness;
+	public int willPower;
 	private Dictionary<Type, int> _contents = null;
 	public Dictionary<Type, int> contents
 	{
@@ -27,12 +22,17 @@ public class GameResources {
 			if (_contents == null)
 			{
 				_contents = new Dictionary<Type, int>();
-				if (mapStore != null)
+				if (capacity != 0)
 				{
-					foreach (var map in mapStore)
-					{
-						_contents[map.key] = map.value;
-					}
+					_contents[Type.Capacity] = capacity;
+				}
+				if (awareness != 0)
+				{
+					_contents[Type.Awareness] = awareness;
+				}
+				if (willPower != 0)
+				{
+					_contents[Type.Willpower] = willPower;
 				}
 			}
 			return _contents;
