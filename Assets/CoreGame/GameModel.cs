@@ -8,7 +8,18 @@ public class GameModel : MonoBehaviour {
 	public FriendData friendData;
 	public UpgradeData upgradeData;
 
+	private int upgradeCounter;
+	public const int upgradesRequiredToChangeEra = 5;
+
 	private GameResources currentResources = new GameResources();
+
+	public enum CurrentEra
+	{
+		Eightbit,
+		Sixteenbit
+	};
+
+	private CurrentEra currentEra;
 
 	public enum ActionType
 	{
@@ -80,10 +91,30 @@ public class GameModel : MonoBehaviour {
 	public void PurchaseUpgrade(UpgradeData.Upgrade upgrade){
 		if (CanPurchase(upgrade))
 		{
+			upgradeCounter++;
 			SubtractResources(upgrade.cost);
 			OnPurchaseUpradeComplete (upgrade);
+
+			if ((upgradeCounter % upgradesRequiredToChangeEra) == 0) {
+				EraTransition ();
+			}
 		}
 	}
+
+	public delegate void EraTransitionCallBack(CurrentEra era);
+
+	public event EraTransitionCallBack OnEraTransition;
+
+	public void EraTransition(){
+		if (currentEra == CurrentEra.Eightbit) {
+			currentEra = CurrentEra.Sixteenbit;
+			OnEraTransition (currentEra);
+		} else {
+			//do nothing
+		}
+
+	}
+
 
 	//can purchase (onresource change)
 	public delegate void ResourceChangeCallBack(GameResources newValues);
@@ -130,5 +161,6 @@ public class GameModel : MonoBehaviour {
 	void Start()
 	{
 		AddResource(GameResources.Type.Capacity, 8);
+		currentEra = CurrentEra.Eightbit;
 	}
 }
