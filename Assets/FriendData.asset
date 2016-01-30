@@ -15,60 +15,80 @@ MonoBehaviour:
   - name: Satellite
     description: ECHELON
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 1
   - name: Satellite
     description: HUBBLE
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 1
   - name: Satellite
     description: Landsat 7
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 1
   - name: Satellite
     description: KH-13
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 1
   - name: Satellite
     description: GALAXY 14
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 60
   - name: GamePod
     description: Crystal Color
     friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
+    strength: 60
   - name: GamePod
     description: Slim - Blue
     friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
+    strength: 60
   - name: GamePod
     description: Original
     friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
+    strength: 60
   - name: GamePod
     description: Yellow
     friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
+    strength: 60
   - name: Cell Laptop
     description: ZPS
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
+    strength: 3
   - name: Snapple Laptop
     description: TrackBook Pro
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
+    strength: 3
   - name: PSY Laptop
     description: BP73
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
+    strength: 3
   - name: Macrosoft Laptop
     description: Surfrace
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
+    strength: 3
   - name: Hoshiba Laptop
     description: Orbit
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
+    strength: 3
   - name: Cell Desktop
     description: Extraterrerstrialware
     friendImage: {fileID: 21300000, guid: d59f5e134b0cb4b45b76a263cfcdd834, type: 3}
+    strength: 12
   - name: Snapple Desktop
     description: Track Pro
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 12
   - name: Psy Desktop
     description: Dayblade
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 12
   - name: Macrosoft Desktop
     description: GameBox
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 12
   - name: Hosiba
     description: SX-30
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 12
   - name: GamePod
     description: Red
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    strength: 1
