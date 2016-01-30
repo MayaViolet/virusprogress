@@ -38,7 +38,7 @@ public class ActionsView : MonoBehaviour {
 
 			Vector3 originalScale = actionButton.transform.localScale;
 			actionButton.transform.localScale = new Vector3 (0, 0, 0);
-			actionButton.transform.DOScale (originalScale, 2);
+			actionButton.transform.DOScale (originalScale, gameModel.gameStartButtonTransitionTime);
 		}
 	}
 

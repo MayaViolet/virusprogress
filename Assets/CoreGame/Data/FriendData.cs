@@ -10,6 +10,7 @@ public class FriendData : ScriptableObject {
 		public string description;
 
 		public Sprite friendImage;
+		public int strength = 1;
 	}
 
 	public Friend[] data;

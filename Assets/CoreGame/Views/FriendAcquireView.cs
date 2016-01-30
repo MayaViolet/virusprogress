@@ -9,6 +9,11 @@ public class FriendAcquireView : MonoBehaviour {
 	public GameObject friendsRoot;
 	public GameObject friendSelectorPrefab;
 
+	public GameObject popupRoot;
+	public Text popupTitle;
+	public Image popupImage;
+	public Text popupExtraText;
+
 	void Start()
 	{
 		gameModel.OnFriendsFound += OnFriendsFound;
@@ -21,13 +26,24 @@ public class FriendAcquireView : MonoBehaviour {
 		{
 			var newElement = Instantiate<GameObject>(friendSelectorPrefab);
 			newElement.transform.SetParent(friendsRoot.transform);
-			var text = newElement.GetComponentInChildren<Text>();
-			text.text = friend.name;
+
+			int chance = gameModel.GetFriendChance(friend);
+			var texts = newElement.GetComponentsInChildren<Text>();
+			foreach (var text in texts)
+			{
+				if (text.name == "Name")
+				{
+					text.text = friend.name + "\n" + friend.description;
+				}
+				else
+				{
+					text.text = chance + "% chance";
+				}
+			}
 			Button friendButton = newElement.GetComponentInChildren<Button>();
 
 			friendButton.onClick.AddListener(() => {
-				gameModel.AddFriend(friend);
-				Hide();
+				AttempAcquisition(friend);
 			});
 		}
 	}
@@ -39,5 +55,24 @@ public class FriendAcquireView : MonoBehaviour {
 			Destroy(child.gameObject);
 		}
 		uiRoot.SetActive(false);
+		popupRoot.SetActive(false);
+	}
+
+	void AttempAcquisition(FriendData.Friend friend)
+	{
+		popupRoot.SetActive(true);
+		popupImage.sprite = friend.friendImage;
+		bool success = gameModel.AttemptFriendTakeover(friend);
+		if (success)
+		{
+			gameModel.AddFriend(friend);
+			popupTitle.text = "SUCCESS";
+			popupExtraText.text = string.Format("+{0} CAPACITY", friend.strength);
+		}
+		else
+		{
+			popupTitle.text = "FAIL :(";
+			popupExtraText.text = "TRY AGAIN";
+		}
 	}
 }
