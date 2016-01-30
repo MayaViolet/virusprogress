@@ -48,7 +48,7 @@ public class PurchaseScreen : MonoBehaviour {
 					string cost = "";
 					foreach (var key in upgrade.cost.contents.Keys)
 					{
-						cost += string.Format("-{0} {1}\n", upgrade.cost.contents[key], key.ToString());
+						cost += string.Format("-{0} {1}\n", upgrade.cost.contents[key], key.ToString().Substring(0, 1));
 					}
 					text.text = cost;
 					if (!available)
