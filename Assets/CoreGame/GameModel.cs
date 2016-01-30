@@ -17,7 +17,7 @@ public class GameModel : MonoBehaviour {
 
 	public delegate void ActionCompleteCallback(ActionType completedAction);
 
-	public event ActionCompleteCallback OnActionComplete;
+	public static event ActionCompleteCallback OnActionComplete;
 
 	public void PerformAction(ActionType actionToPerform)
 	{
@@ -31,7 +31,7 @@ public class GameModel : MonoBehaviour {
 
 	public delegate List<FriendData.Friend> FriendsFoundCallback(List<FriendData.Friend> foundFriends);
 
-	public event FriendsFoundCallback OnFriendsFound;
+	public static event FriendsFoundCallback OnFriendsFound;
 
 	public void SearchForFriends(){
 		List<FriendData.Friend> localFriendList = new List<FriendData.Friend>();
@@ -53,19 +53,43 @@ public class GameModel : MonoBehaviour {
 	//Needs to return either the upgrade or a reason why it can't be 
 	public delegate void PurchaseUpgradeCallback(UpgradeData.Upgrade upgrade);
 
-	public event PurchaseUpgradeCallback OnPurchaseUpradeComplete;
+	public static event PurchaseUpgradeCallback OnPurchaseUpradeComplete;
 
 	public void PurchaseUpgrade(UpgradeData.Upgrade upgrade){
-		OnPurchaseUpradeComplete (upgrade);
+		if (CanPurchase(upgrade))
+		{
+			SubtractResources(upgrade.cost);
+			OnPurchaseUpradeComplete (upgrade);
+		}
 	}
 
 	//can purchase (onresource change)
 	public delegate void ResourceChangeCallBack(GameResources newValues);
 
-	public event ResourceChangeCallBack OnResourceChange;
+	public static event ResourceChangeCallBack OnResourceChange;
 
 
 	public bool CanPurchase(UpgradeData.Upgrade upgradeData){
 		return currentResources.Exceeds(upgradeData.cost);
+	}
+
+	public GameResources resources
+	{
+		get
+		{
+			return currentResources;
+		}
+	}
+
+	public void AddResources(GameResources toAdd)
+	{
+		currentResources.Add(toAdd);
+		OnResourceChange(resources);
+	}
+
+	public void SubtractResources(GameResources toTake)
+	{
+		currentResources.Subtract(toTake, false);
+		OnResourceChange(resources);
 	}
 }
