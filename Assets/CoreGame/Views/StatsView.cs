@@ -18,7 +18,6 @@ public class StatsView : MonoBehaviour {
 	{
 		foreach (var key in newValues.contents.Keys)
 		{
-			print("Got resource "+key);
 			if (!statEntries.ContainsKey(key.ToString()))
 			{
 				var entry = Instantiate<GameObject>(statEntryPrefab);
@@ -37,7 +36,13 @@ public class StatsView : MonoBehaviour {
 		{
 			return;
 		}
-		var image = statEntries[key].GetComponentInChildren<Image>();
-		image.fillAmount = (float)value / 100f;
+		var texts = statEntries[key].GetComponentsInChildren<Text>();
+		foreach (var text in texts)
+		{
+			if (text.name == "Amount")
+			{
+				text.text = value.ToString();
+			}
+		}
 	}
 }
