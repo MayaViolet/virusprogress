@@ -16,6 +16,8 @@ public class GameModel : MonoBehaviour {
 	public Color eraFontColor32 = Color.red;
 	public Color eraBackgroundColor32 = Color.red;
 
+	public Sprite sixteenBitBoarderImage;
+
 	private int upgradeCounter;
 	public int upgradesRequiredToChangeEra
 	{
