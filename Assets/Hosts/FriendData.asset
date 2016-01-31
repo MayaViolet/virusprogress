@@ -12,104 +12,53 @@ MonoBehaviour:
   m_Name: FriendData
   m_EditorClassIdentifier: 
   data:
+  - name: Gamepod
+    possibleDescriptions:
+    - Noflow-Ash
+    - 'EsterUnknown '
+    - 'GraphSockeT P-etrA  '
+    - 'PackAgeID Mik-3 '
+    - Phlogiston
+    friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
+    minStrength: 1
+    maxStrength: 2
+  - name: Laptop
+    possibleDescriptions:
+    - StrigIfiy
+    - Heliton
+    - Dyphilsha
+    - Nexustis
+    - Lighush
+    friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
+    minStrength: 3
+    maxStrength: 10
+  - name: Desktop
+    possibleDescriptions:
+    - AbendFF
+    - 'Access    C '
+    - ACLQ
+    - 'Active CellD     '
+    - Adaptive ContentV  [
+    friendImage: {fileID: 21300000, guid: d59f5e134b0cb4b45b76a263cfcdd834, type: 3}
+    minStrength: 2
+    maxStrength: 6
+  - name: Server
+    possibleDescriptions:
+    - 'Gamma Correction324     '
+    - GNUNMD
+    - GnutellaGDF
+    - 'Golden Master 5     '
+    - GreenfieldADS
+    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
+    minStrength: 15
+    maxStrength: 24
   - name: Satellite
     possibleDescriptions:
-    - Boop
+    - 'D-Grep     '
+    - 'MP-GUI     '
+    - Qr_GUID
+    - Hydrogen
+    - Helium
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Satellite
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Satellite
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Satellite
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Satellite
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: GamePod
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: GamePod
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: GamePod
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: GamePod
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Cell Laptop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Snapple Laptop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: PSY Laptop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Macrosoft Laptop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Hoshiba Laptop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Cell Desktop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: d59f5e134b0cb4b45b76a263cfcdd834, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Snapple Desktop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Psy Desktop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Macrosoft Desktop
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: Hosiba
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
-  - name: GamePod
-    possibleDescriptions: []
-    friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    minStrength: 1
-    maxStrength: 1
+    minStrength: 48
+    maxStrength: 96
