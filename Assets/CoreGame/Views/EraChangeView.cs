@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using DG;
 
@@ -16,6 +17,8 @@ public class EraChangeView : MonoBehaviour {
 	public AudioClip audio16;
 	public AudioClip audio32;
 
+	bool final = false;
+
 	void Start () {
 		gameModel.OnEraTransition += OnEraChange;
 		root.SetActive(true);
@@ -29,6 +32,10 @@ public class EraChangeView : MonoBehaviour {
 	public void Close()
 	{
 		root.SetActive(false);
+		if (final)
+		{
+			SceneManager.LoadScene("End");
+		}
 	}
 
 	void Update()
@@ -49,6 +56,7 @@ public class EraChangeView : MonoBehaviour {
 		{
 			GetComponent<AudioSource>().PlayOneShot(audio32);
 			DoEra(text32);
+			final = true;
 		}
 	}
 }
