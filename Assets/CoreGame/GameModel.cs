@@ -91,10 +91,12 @@ public class GameModel : MonoBehaviour {
 			List<FriendData.Friend> viableFriends = new List<FriendData.Friend>();
 			foreach (var friend in friendData.data)
 			{
-				int chance = GetFriendChance(friend);
+				FriendData.Friend copy = friend.Copy();
+				copy.Randomise();
+				int chance = GetFriendChance(copy);
 				if (chance > 5)
 				{
-					viableFriends.Add(friend);
+					viableFriends.Add(copy);
 				}
 			}
 

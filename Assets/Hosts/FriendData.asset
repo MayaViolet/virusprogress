@@ -13,82 +13,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
   - name: Satellite
-    description: ECHELON
+    possibleDescriptions:
+    - Boop
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 1
+    minStrength: 1
+    maxStrength: 1
   - name: Satellite
-    description: HUBBLE
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 1
+    minStrength: 1
+    maxStrength: 1
   - name: Satellite
-    description: Landsat 7
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 1
+    minStrength: 1
+    maxStrength: 1
   - name: Satellite
-    description: KH-13
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 1
+    minStrength: 1
+    maxStrength: 1
   - name: Satellite
-    description: GALAXY 14
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 60
+    minStrength: 1
+    maxStrength: 1
   - name: GamePod
-    description: Crystal Color
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
-    strength: 60
+    minStrength: 1
+    maxStrength: 1
   - name: GamePod
-    description: Slim - Blue
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
-    strength: 60
+    minStrength: 1
+    maxStrength: 1
   - name: GamePod
-    description: Original
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
-    strength: 60
+    minStrength: 1
+    maxStrength: 1
   - name: GamePod
-    description: Yellow
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 870c6bd09ece0486fbbf87121fdb875a, type: 3}
-    strength: 60
+    minStrength: 1
+    maxStrength: 1
   - name: Cell Laptop
-    description: ZPS
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    strength: 3
+    minStrength: 1
+    maxStrength: 1
   - name: Snapple Laptop
-    description: TrackBook Pro
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    strength: 3
+    minStrength: 1
+    maxStrength: 1
   - name: PSY Laptop
-    description: BP73
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    strength: 3
+    minStrength: 1
+    maxStrength: 1
   - name: Macrosoft Laptop
-    description: Surfrace
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    strength: 3
+    minStrength: 1
+    maxStrength: 1
   - name: Hoshiba Laptop
-    description: Orbit
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 7678adec9ec7c441ea7d6eaa918df845, type: 3}
-    strength: 3
+    minStrength: 1
+    maxStrength: 1
   - name: Cell Desktop
-    description: Extraterrerstrialware
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: d59f5e134b0cb4b45b76a263cfcdd834, type: 3}
-    strength: 12
+    minStrength: 1
+    maxStrength: 1
   - name: Snapple Desktop
-    description: Track Pro
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 12
+    minStrength: 1
+    maxStrength: 1
   - name: Psy Desktop
-    description: Dayblade
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 12
+    minStrength: 1
+    maxStrength: 1
   - name: Macrosoft Desktop
-    description: GameBox
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 12
+    minStrength: 1
+    maxStrength: 1
   - name: Hosiba
-    description: SX-30
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 12
+    minStrength: 1
+    maxStrength: 1
   - name: GamePod
-    description: Red
+    possibleDescriptions: []
     friendImage: {fileID: 21300000, guid: 90abd17f198774098829f5ca3068e4c7, type: 3}
-    strength: 1
+    minStrength: 1
+    maxStrength: 1
