@@ -32,10 +32,6 @@ public class EraChangeView : MonoBehaviour {
 	public void Close()
 	{
 		root.SetActive(false);
-		if (final)
-		{
-			SceneManager.LoadScene("End");
-		}
 	}
 
 	void Update()

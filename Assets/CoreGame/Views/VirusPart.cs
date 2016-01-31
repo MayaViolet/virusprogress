@@ -14,7 +14,7 @@ public class VirusPart : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		trans.Rotate(Vector3.forward * Time.deltaTime * Random.value);
+		trans.Rotate(Vector3.forward * Time.deltaTime * Random.value * 60);
 		trans.localScale = Vector3.one * Random.Range(0.8f, 1);
 	}
 }
