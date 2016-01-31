@@ -13,7 +13,13 @@ AudioMixerController:
   m_StartSnapshot: {fileID: 24500003}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 0d4bd89e632ef4b64b29d7e4675f0920
+    name: 16bit
+  - guid: ef227d78a4712422582bb32bfdb85ecd
+    name: 32bit
+  - guid: 25d1b3f4e38a845ffae0886dab1cb3fe
+    name: 8bit
   m_AudioMixerGroupViews:
   - guids:
     - 4f44bc57fdfc149bfb30c2fb3ebcbba3
@@ -382,7 +388,7 @@ AudioMixerSnapshotController:
     eb60a6516f0f442cd946bb6e16243906: 0.23288241
     82c58f22ddd9a488da0e554dff86ad99: -80
     25d1b3f4e38a845ffae0886dab1cb3fe: 0.025578514
-    fe072c06734c74543bdd6bc6be6228e6: -80
+    fe072c06734c74543bdd6bc6be6228e6: -0.002441872
     2e4b36164a534436c9bc339a8beada24: 0.10800299
     3e4f7e462eee3457b969215b1954db17: -80
     ef227d78a4712422582bb32bfdb85ecd: -80

@@ -31,6 +31,19 @@ public class GameModel : MonoBehaviour {
 	private Dictionary<string, UpgradeData.Upgrade> currentUpgrades = new Dictionary<string, UpgradeData.Upgrade>();
 	private Dictionary<string, int> currentFriends = new Dictionary<string, int>();
 
+	public int friendCount
+	{
+		get
+		{
+			int count = 0;
+			foreach (int i in currentFriends.Values)
+			{
+				count += i;
+			}
+			return count;
+		}
+	}
+
 	public enum CurrentEra
 	{
 		Eightbit,

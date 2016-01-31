@@ -19,6 +19,11 @@ public class ChangeBackground : MonoBehaviour {
 
 	void OnEraTransition (GameModel.CurrentEra era)
 	{
+		var im = GetComponent<Image>();
+		if (im == null)
+		{
+			return;
+		}
 		if (era == GameModel.CurrentEra.Sixteenbit) {
 			if (GetComponent<Image>() != null) {
 				GetComponent<Image> ().sprite = gameModel.sixteenBitBoarderImage;
