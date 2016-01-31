@@ -47,6 +47,7 @@ public class GameModel : MonoBehaviour {
 		Seeking,
 		Purchase
 	};
+		
 
 	public delegate void ActionCompleteCallback(ActionType completedAction);
 
