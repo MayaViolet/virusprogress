@@ -272,7 +272,7 @@ public class GameModel : MonoBehaviour {
 
 	void Start()
 	{
-		AddResource(GameResources.Type.Capacity, 100);
+		AddResource(GameResources.Type.Capacity, 1);
 		currentEra = CurrentEra.Eightbit;
 	}
 }
