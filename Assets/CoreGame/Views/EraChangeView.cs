@@ -13,6 +13,9 @@ public class EraChangeView : MonoBehaviour {
 	public string text16;
 	public string text32;
 
+	public AudioClip audio16;
+	public AudioClip audio32;
+
 	void Start () {
 		gameModel.OnEraTransition += OnEraChange;
 		root.SetActive(true);
@@ -39,10 +42,12 @@ public class EraChangeView : MonoBehaviour {
 	{
 		if (newEra == GameModel.CurrentEra.Sixteenbit)
 		{
+			GetComponent<AudioSource>().PlayOneShot(audio16);
 			DoEra(text16);
 		}
 		else if (newEra == GameModel.CurrentEra.ThirtyTwoBit)
 		{
+			GetComponent<AudioSource>().PlayOneShot(audio32);
 			DoEra(text32);
 		}
 	}
