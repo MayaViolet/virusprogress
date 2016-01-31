@@ -2048,7 +2048,7 @@ AudioSource:
   m_GameObject: {fileID: 701104246}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24326262, guid: b6f82aaf56c764da5ae67097f1e55798,
+  OutputAudioMixerGroup: {fileID: 24345404, guid: b6f82aaf56c764da5ae67097f1e55798,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 88280996e7cd34b979e45d6878597ade, type: 3}
   m_PlayOnAwake: 1
@@ -2123,7 +2123,7 @@ AudioSource:
   m_GameObject: {fileID: 701104246}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24352214, guid: b6f82aaf56c764da5ae67097f1e55798,
+  OutputAudioMixerGroup: {fileID: 24382642, guid: b6f82aaf56c764da5ae67097f1e55798,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 2702db5a725bf4e289b36b6265f7d82e, type: 3}
   m_PlayOnAwake: 1
@@ -2273,7 +2273,7 @@ AudioSource:
   m_GameObject: {fileID: 701104246}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24342822, guid: b6f82aaf56c764da5ae67097f1e55798,
+  OutputAudioMixerGroup: {fileID: 24376684, guid: b6f82aaf56c764da5ae67097f1e55798,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 6abc45acb0cdf4eb48b392cb61e709f1, type: 3}
   m_PlayOnAwake: 1
@@ -3243,7 +3243,6 @@ GameObject:
   - 224: {fileID: 1014096711}
   - 222: {fileID: 1014096713}
   - 114: {fileID: 1014096712}
-  - 114: {fileID: 1014096714}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -3280,7 +3279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.07450981, g: 0.17254902, b: 0.003921569, a: 0.019607844}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3301,18 +3300,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1014096710}
---- !u!114 &1014096714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1014096710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2f03c56f61c41c4a8a77087fc91916, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameModel: {fileID: 13172169}
 --- !u!1 &1022523248
 GameObject:
   m_ObjectHideFlags: 0
@@ -6528,7 +6515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2070704974
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6641,6 +6628,7 @@ MonoBehaviour:
   text32: Now.. NOW .. IS THE TIME... I can find them all...
   audio16: {fileID: 8300000, guid: 063e939a5796645598c77d6d41bbd28e, type: 3}
   audio32: {fileID: 8300000, guid: 30a234573728141f6bb630d14eb358cf, type: 3}
+  mixer: {fileID: 24100000, guid: b6f82aaf56c764da5ae67097f1e55798, type: 2}
 --- !u!1 &2128669398
 GameObject:
   m_ObjectHideFlags: 0

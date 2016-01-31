@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using DG;
@@ -16,6 +17,7 @@ public class EraChangeView : MonoBehaviour {
 
 	public AudioClip audio16;
 	public AudioClip audio32;
+	public AudioMixer mixer;
 
 	bool final = false;
 
@@ -27,6 +29,7 @@ public class EraChangeView : MonoBehaviour {
 	void DoEra(string text)
 	{
 		root.SetActive(true);
+		this.text.text = text;
 	}
 
 	public void Close()
@@ -43,13 +46,19 @@ public class EraChangeView : MonoBehaviour {
 
 	void OnEraChange(GameModel.CurrentEra newEra)
 	{
+		Debug.LogWarning("New era: "+newEra.ToString());
 		if (newEra == GameModel.CurrentEra.Sixteenbit)
 		{
+			mixer.SetFloat("8bit", -80);
+			mixer.SetFloat("16bit", 0);
 			GetComponent<AudioSource>().PlayOneShot(audio16);
 			DoEra(text16);
 		}
 		else if (newEra == GameModel.CurrentEra.ThirtyTwoBit)
 		{
+			mixer.SetFloat("8bit", -80);
+			mixer.SetFloat("16bit", -80);
+			mixer.SetFloat("32bit", 0);
 			GetComponent<AudioSource>().PlayOneShot(audio32);
 			DoEra(text32);
 			final = true;
