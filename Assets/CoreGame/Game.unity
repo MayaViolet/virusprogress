@@ -116,8 +116,10 @@ MonoBehaviour:
   upgradeData: {fileID: 11400000, guid: 387f1db6261cc45fa92c4502ee64145f, type: 2}
   backgroundEraTransitionTime: 0.2
   gameStartButtonTransitionTime: 0.2
-  sixteenBitEraFontColor: {r: 0.39705884, g: 0.750507, b: 1, a: 1}
-  sixteenBitEraBackgroundColor: {r: 0.15516868, g: 0.29154488, b: 0.5147059, a: 1}
+  eraFontColor16: {r: 0.52205884, g: 0.52205884, b: 1, a: 1}
+  eraBackgroundColor16: {r: 0.0934256, g: 0.0934256, b: 0.39705884, a: 1}
+  eraFontColor32: {r: 1, g: 0.2689655, b: 0, a: 1}
+  eraBackgroundColor32: {r: 0.43382353, g: 0, b: 0, a: 1}
 --- !u!4 &13172170
 Transform:
   m_ObjectHideFlags: 0
