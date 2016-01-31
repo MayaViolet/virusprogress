@@ -18,12 +18,16 @@ public class ChangeTextColor : MonoBehaviour {
 
 	void OnEraTransition (GameModel.CurrentEra era)
 	{
-		if (era == GameModel.CurrentEra.Sixteenbit) {
-			GetComponent<Text> ().DOColor (gameModel.eraFontColor16, gameModel.backgroundEraTransitionTime);
-		}
-		else
+		var texts = GetComponentsInChildren<Text>();
+		foreach (var text in texts)
 		{
-			GetComponent<Text> ().DOColor (gameModel.eraFontColor32, gameModel.backgroundEraTransitionTime);
+			if (era == GameModel.CurrentEra.Sixteenbit) {
+				text.DOColor (gameModel.eraFontColor16, gameModel.backgroundEraTransitionTime);
+			}
+			else
+			{
+				text.DOColor (gameModel.eraFontColor32, gameModel.backgroundEraTransitionTime);
+			}
 		}
 	}
 	
