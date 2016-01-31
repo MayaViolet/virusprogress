@@ -11,11 +11,19 @@ public class GameModel : MonoBehaviour {
 	public float backgroundEraTransitionTime = 0.2f;
 	public float gameStartButtonTransitionTime = 0.2f;
 
-	public Color sixteenBitEraFontColor = Color.blue;
-	public Color sixteenBitEraBackgroundColor = Color.blue;
+	public Color eraFontColor16 = Color.blue;
+	public Color eraBackgroundColor16 = Color.blue;
+	public Color eraFontColor32 = Color.red;
+	public Color eraBackgroundColor32 = Color.red;
 
 	private int upgradeCounter;
-	public const int upgradesRequiredToChangeEra = 5;
+	public int upgradesRequiredToChangeEra
+	{
+		get
+		{
+			return upgradeData.data.Length/2;
+		}
+	}
 
 	private GameResources currentResources = new GameResources();
 	private Dictionary<string, UpgradeData.Upgrade> currentUpgrades = new Dictionary<string, UpgradeData.Upgrade>();
@@ -24,7 +32,8 @@ public class GameModel : MonoBehaviour {
 	public enum CurrentEra
 	{
 		Eightbit,
-		Sixteenbit
+		Sixteenbit,
+		ThirtyTwoBit
 	};
 
 	private CurrentEra currentEra;
@@ -172,8 +181,24 @@ public class GameModel : MonoBehaviour {
 				OnPurchaseUpradeComplete (upgrade);
 			}
 
-			if ((upgradeCounter % upgradesRequiredToChangeEra)==0) {
+			if (currentEra == CurrentEra.Eightbit && upgradeCounter >= upgradesRequiredToChangeEra)
+			{
 				EraTransition ();
+			}
+
+			//Check for all purchased
+			bool complete = true;
+			foreach (var entry in upgradeData.data)
+			{
+				if (!HasPurchased(entry))
+				{
+					complete = false;
+					break;
+				}
+			}
+			if (complete)
+			{
+				EraTransition();
 			}
 		}
 	}
@@ -185,6 +210,9 @@ public class GameModel : MonoBehaviour {
 	public void EraTransition(){
 		if (currentEra == CurrentEra.Eightbit) {
 			currentEra = CurrentEra.Sixteenbit;
+			OnEraTransition (currentEra);
+		} else if (currentEra == CurrentEra.Sixteenbit) {
+			currentEra = CurrentEra.ThirtyTwoBit;
 			OnEraTransition (currentEra);
 		} else {
 			//do nothing
@@ -242,7 +270,7 @@ public class GameModel : MonoBehaviour {
 
 	void Start()
 	{
-		AddResource(GameResources.Type.Capacity, 1);
+		AddResource(GameResources.Type.Capacity, 100);
 		currentEra = CurrentEra.Eightbit;
 	}
 }

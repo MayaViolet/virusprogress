@@ -20,9 +20,11 @@ public class ChangeBackgroundColor : MonoBehaviour {
 	void OnEraTransition (GameModel.CurrentEra era)
 	{
 		if (era == GameModel.CurrentEra.Sixteenbit) {
-//			GetComponent<Image> ().color = gameModel.sixteenBitEraBackgroundColor;
-
-			GetComponent<Image> ().DOColor (gameModel.sixteenBitEraBackgroundColor, gameModel.backgroundEraTransitionTime);
+			GetComponent<Image> ().DOColor (gameModel.eraBackgroundColor16, gameModel.backgroundEraTransitionTime);
+		}
+		else
+		{
+			GetComponent<Image> ().DOColor (gameModel.eraBackgroundColor32, gameModel.backgroundEraTransitionTime);
 		}
 	}
 	
