@@ -25,6 +25,7 @@ public class StatsView : MonoBehaviour {
 				entry.transform.SetParent(transform);
 				var text = entry.GetComponentInChildren<Text>();
 				text.text = key.ToString();
+				text.color = gameModel.CurrentFontColor (text.color);
 			}
 			SetValue(key.ToString(), newValues.contents[key]);
 		}

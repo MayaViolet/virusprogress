@@ -42,6 +42,7 @@ public class FriendAcquireView : MonoBehaviour {
 				{
 					text.text = chance + "% chance";
 				}
+				text.color = gameModel.CurrentFontColor (text.color);
 			}
 			Button friendButton = newElement.GetComponentInChildren<Button>();
 

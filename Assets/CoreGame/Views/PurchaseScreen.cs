@@ -57,6 +57,7 @@ public class PurchaseScreen : MonoBehaviour {
 						continue;
 					}
 				}
+				text.color = gameModel.CurrentFontColor (text.color);
 			}
 
 			if (available)

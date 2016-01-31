@@ -16,6 +16,11 @@ public class ChangeTextColor : MonoBehaviour {
 		gameModel.OnEraTransition += OnEraTransition;
 	}
 
+	void OnDisable()
+	{
+		gameModel.OnEraTransition -= OnEraTransition;
+	}
+
 	void OnEraTransition (GameModel.CurrentEra era)
 	{
 		var texts = GetComponentsInChildren<Text>();

@@ -47,6 +47,30 @@ public class GameModel : MonoBehaviour {
 		Seeking,
 		Purchase
 	};
+
+	public Color CurrentBackgroundColor(Color defaultC)
+	{
+		if (currentEra == CurrentEra.Eightbit) {
+			return defaultC;
+		} else if (currentEra == CurrentEra.Sixteenbit) {
+			return eraBackgroundColor16;
+		} else if (currentEra == CurrentEra.ThirtyTwoBit) {
+			return eraBackgroundColor32;
+		}
+		return defaultC;
+	}
+
+	public Color CurrentFontColor(Color defaultC)
+	{
+		if (currentEra == CurrentEra.Eightbit) {
+			return defaultC;
+		} else if (currentEra == CurrentEra.Sixteenbit) {
+			return eraFontColor16;
+		} else if (currentEra == CurrentEra.ThirtyTwoBit) {
+			return eraFontColor32;
+		}
+		return defaultC;
+	}
 		
 
 	public delegate void ActionCompleteCallback(ActionType completedAction);
@@ -275,5 +299,6 @@ public class GameModel : MonoBehaviour {
 	{
 		AddResource(GameResources.Type.Capacity, 1);
 		currentEra = CurrentEra.Eightbit;
+
 	}
 }

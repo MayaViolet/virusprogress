@@ -17,10 +17,17 @@ public class ChangeBackgroundColor : MonoBehaviour {
 		gameModel.OnEraTransition += OnEraTransition;
 	}
 
+	void OnDisable()
+	{
+		gameModel.OnEraTransition -= OnEraTransition;
+	}
+
 	void OnEraTransition (GameModel.CurrentEra era)
 	{
 		if (era == GameModel.CurrentEra.Sixteenbit) {
-			GetComponent<Image> ().DOColor (gameModel.eraBackgroundColor16, gameModel.backgroundEraTransitionTime);
+			//if (gameModel) {
+				GetComponent<Image> ().DOColor (gameModel.eraBackgroundColor16, gameModel.backgroundEraTransitionTime);
+			//}
 		}
 		else
 		{
