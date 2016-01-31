@@ -51,7 +51,7 @@ public class StoryView : MonoBehaviour {
 		actionsTillNextSnippet--;
 		if (actionsTillNextSnippet <= 0)
 		{
-			actionsTillNextSnippet = Random.Range(2,6);
+			actionsTillNextSnippet = Random.Range(4,12);
 			AddLine(randomSnippets[Random.Range(0, randomSnippets.Length)]);
 		}
 	}
