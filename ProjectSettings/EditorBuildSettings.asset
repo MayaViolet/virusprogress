@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/CoreGame/Game.unity
   - enabled: 1
     path: Assets/Credits.unity
+  - enabled: 1
+    path: Assets/CoreGame/End.unity

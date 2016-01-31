@@ -8,7 +8,7 @@ public class LoadCredits : MonoBehaviour {
 	
 	}
 	
-	void loadCredits(){
+	public void loadCredits(){
 		Application.LoadLevel ("Credits"); 
 	}
 }

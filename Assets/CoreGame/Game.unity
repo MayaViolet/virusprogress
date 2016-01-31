@@ -7163,7 +7163,7 @@ MonoBehaviour:
   text32: Now.. NOW .. IS THE TIME... I can find them all...
   audio16: {fileID: 8300000, guid: 063e939a5796645598c77d6d41bbd28e, type: 3}
   audio32: {fileID: 8300000, guid: 30a234573728141f6bb630d14eb358cf, type: 3}
-  mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: b6f82aaf56c764da5ae67097f1e55798, type: 2}
 --- !u!1 &2128669398
 GameObject:
   m_ObjectHideFlags: 0
